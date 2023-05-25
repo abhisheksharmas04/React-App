@@ -10,10 +10,8 @@ const ABOUT_US_PAGE = "/aboutUS";
 
 function App() {
   return (
-    <div className="App">
+    <div className='.container-fluid'>
       <AppRouter/>
-      
-
     </div>
   );
 }
