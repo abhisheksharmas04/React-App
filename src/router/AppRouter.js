@@ -1,50 +1,36 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from "../component/Home";
 import About from "../component/About";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import SalesCloud from "../component/Sales";
+import ServiceCloud from "../component/Servicecloud";
+import Heroku from "../component/Heroku";
+import Cpql from "../component/Cpql";
+import MenuBar from "../component/MenuBar";
+import ContactUs from "../component/ContanctUs";
+import TopMenuBar from "../component/TopMenuBar";
 
 const AppRouter = () => {
     const ABOUT_US_PAGE = "/aboutUS";
+    const CONTANCT_US_PAGE = "/contactUs"
+    const SALES_CLOUD_PAGE = "/salesCloud";
+    const SERVICE_CLOUD_PAGE = "/serviceCloud";
+    const HEROKU_PAGE = "/heruko";
+    const CPQL_PAGE = "/cpql";
+
     return (
         <BrowserRouter>
-            <nav class="navbar navbar-default">
-                <div class="jumbotron jumbotron-fluid justify-content-between">
-                    <div class="row no-gutters">
-                        <div class="col-12 col-sm-6 col-md-8">
-                            <div class="navbar-header justify-content-between">
-                                <Link class="navbar-brand" to="/">WebSiteName</Link>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <a href="https://www.youtube.com/c/jamesqquick">
-                                <FontAwesomeIcon icon={faYoutube} size="2x"></FontAwesomeIcon>
-                            </a>
-                            <a href="https://www.youtube.com/c/jamesqquick">
-                                <FontAwesomeIcon icon={faFacebook} size="2x"></FontAwesomeIcon>
-                            </a>
-                            <a href="https://www.youtube.com/c/jamesqquick">
-                                <FontAwesomeIcon icon={faTwitter} size="2x"></FontAwesomeIcon>
-                            </a>
-                            <a href="https://www.youtube.com/c/jamesqquick">
-                                <FontAwesomeIcon icon={faInstagram} size="2x"></FontAwesomeIcon>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container-fluid">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><Link to="/">Home</Link></li>
-                        <li><Link to={ABOUT_US_PAGE}>About Us</Link></li>
-                    </ul>
-                </div>
-            </nav>
+            <TopMenuBar />
+            <MenuBar />
             <Routes>
                 <Route path='/' element={<Home />}></Route>
                 <Route path={ABOUT_US_PAGE} element={<About />}></Route>
+                <Route path={CONTANCT_US_PAGE} element={<ContactUs />}></Route>
+                <Route path={SALES_CLOUD_PAGE} element={<SalesCloud />}></Route>
+                <Route path={SERVICE_CLOUD_PAGE} element={<ServiceCloud />}></Route>
+                <Route path={HEROKU_PAGE} element={<Heroku />}></Route>
+                <Route path={CPQL_PAGE} element={<Cpql />}></Route>
             </Routes>
-
         </BrowserRouter>
     );
 }
